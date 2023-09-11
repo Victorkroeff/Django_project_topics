@@ -1,0 +1,13 @@
+<p>
+    <a href="{% url 'index'%}">Título</a>
+    <a href="{% url 'topics'%}">Tópicos</a>
+    {%if user.is_authenticated %}
+        olá, {{user.username}}
+        <a href="{% url 'logout' %}">Sair</a>
+    {% else %}
+        <a href="{% url 'register' %}">Registrar</a>
+        <a href="{% url 'login' %}">Entrar</a>
+    {% endif %}
+</p>
+
+{% block content %}{% endblock content %}
